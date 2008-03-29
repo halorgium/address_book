@@ -1,0 +1,9 @@
+grammar AddressBook
+  rule full_name
+    [a-zA-Z ]+ {
+      def value
+        text_value
+      end
+    }
+  end
+end
