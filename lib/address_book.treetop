@@ -1,6 +1,30 @@
 grammar AddressBook
   rule full_name
-    [a-zA-Z ]+ {
+    (word / space)+ {
+      def value
+        text_value
+      end
+    }
+  end
+  
+  rule email
+    word '@' word '.' word {
+      def value
+        text_value
+      end
+    }
+  end
+  
+  rule space
+    [ ]+ {
+      def value
+        text_value
+      end
+    }
+  end
+  
+  rule word
+    [a-zA-Z0-9]+ {
       def value
         text_value
       end
